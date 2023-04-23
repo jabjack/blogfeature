@@ -1,0 +1,2395 @@
+
+
+* en el index 
+
+uso la libreria iconos y estilos
+
+
+    <link rel="icon" href="img/png" sizes="32x32" href="./assets/images/favicon.png">
+    <!--remix icons-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css">
+    <!--Swiper.js styles-->
+    <link rel="stylesheet" href="./assets/css/swiper-bundle.min.css"/>
+    <!--Custom styles-->
+    <link rel="stylesheet" href="./assets/main.css">	
+	
+//esta es la estructura de la api
+
+<body>
+    <!--Header-->
+
+    <!--Search-->
+
+    <!--Featured article-->
+
+    <!--Quick read-->
+
+    <!--Older posts-->
+
+    <!--Popular tags-->
+
+    <!--NewsLetter-->
+
+    <!--Footer-->
+
+
+    <!--Swiper.js-->
+    <script src="./assets/js/swiper-bundle.min.js"></script>
+    <!--Custom script-->
+    <script src="./assets/js/main.js"></script>
+
+    
+</body>
+
+
+desarrollo.
+
+1ero creo el header:
+
+
+<body>
+    <!--Header-->
+    <header class="header" id="header">
+        <nav class="navbar container">
+            <a href="index.html">
+                <h2 class="log">Blog</h2>
+            </a>
+            <div class="menu" id="menu">
+                <ul class="list">
+                    <li class="list-item">
+                        <a href="#" class="list-link current">Home</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="list-link">Categories</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="list-link">Reviews</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="list-link">News</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="list-link">Membership</a>
+                    </li>
+                    <li class="list-item">
+                        <a href="#" class="list-link">Contact</a>
+                    </li>
+                    <li class="list-item screen-hidden">
+                        <a href="#" class="list-link">Sign in</a>
+                    </li>
+                    <li class="list-item screen-hidden">
+                        <a href="#" class="list-link">Sign out</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="list list-rigth">
+
+                <button class="btn place-items-center" id="theme-toggle-btn">
+                    <i class="ri-sun-line sun-icon"></i>
+                    <i class="ri-moon-line moon-icon"></i>
+
+                </button>
+
+
+                
+                <button class="btn place-items-center" id="search-icon">
+                    <i class="ri-search-line"></i>
+                </button>
+
+                <button class="btn place-items-center screen-lg-hidden menu-toggle-icon"
+                id="menu-toggle-icon">
+
+                    <i class="ri-menu-3-line open-menu-icon"></i>
+                    <i class="ri-close-line close-menu-icon"></i>
+
+                </button>
+
+                <a href="#" class="list-link screen-sm-hidden">Sign In</a>
+                <a href="#" class="list-link screen-sm-hidden sign-up-btn fancy-border">
+                    <span>Sign in</span>
+                </a>
+
+            </div>
+
+        </nav>
+    </header>
+
+** le agrego el css en el main.css
+
+
+
+me quede en la 17:01 
+
+
+20:18
+
+color: inherit ese quita el colo de base .
+
+
+20:45
+
+
+27:49
+
+31:58
+
+
+**************8
+
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+:root{
+
+        --light-color:#fff;
+        --light-color-alt: #afb6cd;
+        --primary-background-color: #131417;
+        --secundary-background-color: #252830;
+        --hover-light-color: var(--light-color);
+        --hover-dark-color: var(--primary-background-color);
+        --gradient-color: linear-gradient(
+            115deg, #4fcf70 , #fad648, #a767e5, #12bcfe, #44ce7b); 
+        --transparent-light-color: rgba(255,255,255,.05);
+        --transparent-dark-color: rgba(0,0,0,.75);
+        --font-family: 'Poppins', sans-serif;
+        --font-size-xsm: 1.2rem;
+        --font-size-sm: 1.6rem;
+        --font-size-md: 2.4rem;
+        --font-size-lg: 3rem;
+        --font-size-xl: 4rem;
+        --gap: 2rem;
+        --margin-sm: 2rem;
+        --magin-md: 3rem;
+        --item-min-height-sm: 20rem;
+        --item-min-height-md: 30rem;
+
+}
+
+/*Base style*/
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html{
+    /*font-size: 20px ;*/
+    font-size: 62.5%;
+}
+
+body {
+
+    font-family: var(--font-family);
+
+    font-size: var(--font-size-sm) ;
+
+    color: var(--light-color-alt);
+
+    background-color: var(--primary-background-color);
+
+    letter-spacing: 1px;
+
+    transition: background-color .25s, color .25s;
+
+}
+
+a{
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+img{
+
+    max-width: 100%;
+    display: block;
+}
+
+ul{
+
+    list-style: none ;
+}
+
+input, button{
+
+        font: inherit;
+        color: inherit;
+        border: none;
+        background-color: transparent;
+        outline: none;
+
+}
+
+i{
+    font-size: var(--font-size-md);
+}
+
+/*theme color change*/
+
+
+body.light-theme{
+    --light-color:#3d3d3d;
+    --light-color-alt: rgba(0,0,0,.6);
+    --primary-background-color: #fff;
+    --secundary-background-color: #f1f1f1;
+    --hover-light-color: #fff;
+    --transparent-light-color: #252830;
+    --transparent-dark-color: rgba(0,0,0,.1);
+}
+
+/*Reusable classes*/
+
+.container{
+
+    max-width: 160rem;
+    margin: 0 auto ;
+    padding: 0 1.5rem;
+
+}
+
+.place-items-center{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.screen-sm-hidden {
+
+
+    display: none;
+
+}
+
+.header{
+
+    background-color: var(--secundary-background-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+
+}
+
+.navbar{
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-block: 1.5rem;
+
+}
+
+.logo{
+    font-size: var(--font-size-md);
+    color: var(--light-color);
+
+}
+
+.menu{
+
+    position: absolute;
+    top: 8.5rem;
+    right: 1.5rem;
+    width: 23rem;
+    padding: 1.5rem;
+    background-color: var(--secundary-background-color);
+    /*
+    opacity: 0;
+    transform: scale(0);
+    */
+    transition: opacity .25s ease-in;
+
+
+}
+
+.list{
+
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    
+}
+
+.menu > .list{
+
+    flex-direction: column;
+}
+
+.list-link.current{
+
+    color: var(--light-color);
+}
+
+.close-menu-icon{
+
+    display: none;
+}
+
+.btn{
+
+    cursor: pointer;
+}
+
+.list-link:hover,
+.btn:hover,
+.btn:hover span{
+
+    color: var(--light-color);
+
+}
+
+.moon-icon{
+
+    display: none;
+}
+
+.light-theme .sun-icon{
+
+    display: none;
+
+}
+
+
+.light-theme .sun-icon{
+
+    display: block;
+
+}
+
+
+
+35.17
+
+
+
+**** voy al js y creo los elementos 
+
+
+38:48
+
+en main.js
+
+
+
+//grab elements
+
+const selectElement = selector =>{
+
+    const element = document.querySelector(selector)
+
+    if(element) return element;
+
+    throw new Error(`something went, wrong make sure that ${selector} exists or is typed correctly.`)
+
+
+};
+
+//nav styles on scroll
+
+const scrollHeader = () => {
+    const headerElement = selectElement('#header');
+
+    if(this.scrollY >= 15){
+
+        headerElement.classList.add('activated');
+
+    }else {
+
+        headerElement.classList.remove('activated');
+
+
+    }
+} 
+
+* en el html agrego el search
+
+ <!--Search-->
+
+    <div class="search"></div>
+
+
+*agrego el estilo css
+
+
+*al main.js
+
+le agrego el eventlistener le agrego el evento scroll y la funcion del scrollHeeader
+
+
+window.addEventListener('scroll', scrollHeader)
+
+en el js
+
+abrimos el menu y busca pop pu la barra con este logica 
+
+//add event
+
+
+window.addEventListener('scroll', scrollHeader);
+
+const menuToggleIcon = selectElement('#menu-taggle-icon');
+
+//este es:
+
+const toggleMenu = () => {
+
+    const mobileMenu = selectElement('#menu');
+    mobileMenu.classList.toggle('activated');
+    menuToggleIcon.classList.toggle('activated');
+
+
+}
+
+
+//add event
+
+
+menuToggleIcon.addEventListener('click', toggleMenu)
+
+
+44:34
+
+
+el main.js 
+
+
+//grab elements
+
+
+// aqui para el selector del DOM.
+const selectElement = selector =>{
+
+    const element = document.querySelector(selector)
+
+    if(element) return element;
+
+    throw new Error(`Somenthing went. make sure that ${selector} exists or is typed correctly.`);
+
+};
+
+
+IMPORTANTE
+//nav styles on scroll  aqui cuando bajo el scroll cambia de color rojo.
+
+CUANDO EL CSS ESTA EN .header.activated background rojo 
+
+const scrollHeader = () => {
+    
+    const headerElement = selectElement('#header');
+
+    if(this.scrollY >= 15){
+            headerElement.classList.add('activated');
+    }else{
+            headerElement.classList.remove('activated');
+    }
+};
+
+//add the event
+
+window.addEventListener('scroll', scrollHeader)
+
+
+IMPORTANTE:
+
+****** Para que aparezca el menu del navbar 
+
+el le pasa el id de #menu-toggle-icon
+
+
+const menuToggleIcon = selectElement('#menu-toggle-icon');
+
+
+
+// ahora creo la funciona que llame el menuToggleIcon
+
+
+
+//Open menu & Search pop-up
+
+
+const menuToggleIcon = selectElement('#menu-toggle-icon');
+
+// function calla menuToggleIcon
+
+const toggleMenu = () =>{
+    const mobileMenu = selectElement('#menu');
+    mobileMenu.classList.toggle('activated');
+    menuToggleIcon.classList.toggle('activated');
+}
+
+//add event
+
+menuToggleIcon.addEventListener('click',toggleMenu);
+
+
+43:31
+
+
+
+
+******************* La funcionalidad del swiche que al clickear cambia el tema.
+
+
+
+//switch theme/add to local storage
+
+const bodyElement = document.body;
+
+const themeToggleBtn = selectElement('#theme-toggle-btn');
+
+
+themeToggleBtn.addEventListener('click', () => {
+    bodyElement.classList.toggle('light-theme');
+});
+
+
+
+agrego al local store
+
+***************************
+
+
+const bodyElement = document.body;
+
+const themeToggleBtn = selectElement('#theme-toggle-btn');
+
+const currentTheme = localStorage.getItem('currentTheme');
+
+
+themeToggleBtn.addEventListener('click', () => {
+   
+    bodyElement.classList.toggle('light-theme');
+
+    //add to the localStore
+
+    if(bodyElement.classList.contains('light-theme')){
+            
+        localStorage.setItem('currentTheme','themeActive');
+    
+    } else {
+
+        localStorage.removeItem('currentTheme');
+
+    }
+
+
+
+});
+
+
+
+//switch theme/add to local storage
+
+const bodyElement = document.body;
+
+const themeToggleBtn = selectElement('#theme-toggle-btn');
+
+const currentTheme = localStorage.getItem('currentTheme');
+
+if(currentTheme){
+    bodyElement.classList.add('light-theme');
+}
+
+
+
+*agregp ;a narra de navegacion:
+
+
+**************************************** agrego el menu de busqueda y formulario:
+
+
+    <!--Search-->
+
+    <div class="search-form-container container" id="search-form-container">
+
+        <div class="form-container-inner">
+
+
+            <form action="" class="form">
+
+                <input type="text" class="form-input" placeholder="What are looking for?">
+                <button class="btn form-btn" type="submit">
+
+                    <i class="ri-search-line"></i>
+
+                </button>
+            </form>
+
+            <span class="form-note">Or press Esc to close.</span>
+
+        </div>
+        <button class="btn form-close-btn place-items-center" id="form-close-btn">
+            <i class="ri-close-line"></i>
+        </button>
+
+    </div>
+
+
+
+**le agrego el css:
+
+
+
+/*Search style*/
+
+
+.search-form-container{
+
+    width: 100%;
+    max-width: 100%;
+    height: 100vh;
+    background-color: var(--primary-background-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: flex;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity .5s;
+
+}
+
+.form-container-inner{
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    text-align: center;
+}
+
+.form{
+
+    display: flex;
+    justify-content: center;
+
+}
+
+.form-input,
+.form-btn{
+    display: inline-block;
+    border: 2px solid var(--secundary-background-color);
+    padding: 1.5rem;
+}
+
+.form-input{
+    border-right: none;
+    width: 100%;
+   
+}
+
+.form-btn{
+    margin-left: -.5rem;
+    border-left: none;
+    background-color: var(--secundary-background-color);
+    width: 8rem;
+
+}
+
+.form-note{
+    font-size: var(--font-size-xsm);
+    align-self: flex-end;
+
+}
+
+.form-close-btn{
+    position: absolute;
+    top: 1.5rem;
+    right: 1.5rem;
+    border: 2px solid var(--secundary-background-color);
+    width: 4rem ;
+    height: 4rem;
+    display: flex;
+}
+
+/*form javascript style*/
+
+.search-form-container.activated{
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+
+*********************************
+
+en main.js le agrego a funcionalidad al search o barra de busqueda
+
+
+//open /close search form popup
+
+const formOpenBtn = selectElement('#search-icon');
+
+const formCloseBtn = selectElement('#form-close-btn');
+
+const searchFormContainer = selectElement('#search-form-container');
+
+formOpenBtn.addEventListener('click', () =>
+
+searchFormContainer.classList.add('activated'));
+
+
+
+formOpenBtn.addEventListener('click', () =>
+
+searchFormContainer.classList.add('activated'));
+
+formCloseBtn.addEventListener('click', () =>
+
+searchFormContainer.classList.remove('activated'));
+
+
+window.addEventListener('keyup', event => {
+    if(event.key === 'Escape') searchFormContainer.classList.remove('activated');
+});
+
+
+
+1:03
+
+//switch theme/add to local storage
+
+const bodyElement = document.body;
+
+const themeToggleBtn = selectElement('#theme-toggle-btn');
+
+const currentTheme = localStorage.getItem('currentTheme');
+
+if(currentTheme){
+    bodyElement.classList.add('light-theme');
+}
+
+
+themeToggleBtn.addEventListener('click', () => {
+   
+    bodyElement.classList.toggle('light-theme');
+
+    //add to the localStore
+
+    if(bodyElement.classList.contains('light-theme')){
+            
+        localStorage.setItem('currentTheme','themeActive');
+    
+    } else {
+
+        localStorage.removeItem('currentTheme');
+
+    }
+
+
+
+});
+
+*******************
+
+
+Agrego la clasificacion de articulos:
+
+<!--Featured article-->
+
+
+1.08
+
+***agrego el contenido HTML:
+
+
+En una seccion:
+
+
+    <section class="featured-articles section-header-offset">
+
+        <div class="featured-articles-container container d-grid">
+
+            <div class="featured-content d-grid">
+                 
+                <div class="headline-banner">
+
+                   <h3 class="headline fancy-border">
+                        <span class="place-items-center">Breaking news</span>
+                   </h3>
+                   <span class="headline-description">Apple announces a new partnership...</span>
+
+                </div>
+
+                <a href="./post.html" class="article featured-article featured-article-1">
+
+                    <img src="./assets/images/featured/featured-1.jpg" alt="" class="article-image">
+                    <span class="article-category">Technology</span>
+                    
+                    <div class="article-data-container">
+
+                        <div class="article-data">
+
+                            <span>Dec 3th 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>8 min red</span>
+
+                        </div>
+
+                        <h3 class="title article-title">Is VR the future</h3>
+                     
+
+
+                    </div>
+                               
+                
+                </a>
+
+                <a href="./post.html" class="article featured-article featured-article-2">
+
+                    <img src="./assets/images/featured/featured-2.jpg" alt="" class="article-image">
+                    <span class="article-category">Technology</span>
+                    
+                    <div class="article-data-container">
+
+                        <div class="article-data">
+
+                            <span>Dec 3th 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>8 min red</span>
+
+                        </div>
+
+                        <h3 class="title article-title">Is VR the future</h3>
+                     
+
+
+                    </div>
+                               
+                
+                </a>
+
+                <a href="./post.html" class="article featured-article featured-article-3">
+
+                    <img src="./assets/images/featured/featured-3.jpg" alt="" class="article-image">
+                    <span class="article-category">Technology</span>
+                    
+                    <div class="article-data-container">
+
+                        <div class="article-data">
+
+                            <span>Dec 3th 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>8 min red</span>
+
+                        </div>
+
+                        <h3 class="title article-title">Is VR the future</h3>
+                     
+
+
+                    </div>
+                               
+                
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+
+**** AGREGO EL CSS A LA SECCION:
+
+1ero agrego a la clase reusable de fabrica un 
+
+
+
+.d-grid{
+
+    display: grid;
+
+}
+
+
+.section{
+
+    padding-block: 5rem;
+
+}
+
+
+
+
+despues bajo a la forma normal:
+
+
+
+/*Featured articles Style*/
+
+1.11 me quede
+
+1.17 vpy
+
+
+/*Featured articles Style*/
+
+.featured-articles{
+
+    padding-block: 2rem;
+}
+
+
+.section-header-offset{
+
+    margin-top: 7.4rem;
+}
+
+.featured-articles-container,
+.featured-content{
+
+    gap: var(--gap);
+
+}
+
+.headline-banner{
+
+    background-color: var(--secundary-background-color);
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    font-size: var(--font-size-xsm);
+
+}
+
+.headline{
+    color: var(--light-color);
+    font-size: 1rem;
+    text-transform: uppercase;
+    text-align: center;
+    padding: .4rem;
+    height: 100%;
+}
+
+.headline span{
+
+    height: inherit;
+}
+
+.fancy-border{
+    position: relative;
+    overflow: hidden;
+}
+
+.fancy-border::before{
+
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 200%;
+    height: 100%;
+    background: var(--gradient-color);
+    background-size: 50% 100%;
+    z-index: 5;
+}
+
+.fancy-border span{
+
+    position: relative;
+    z-index: 10;
+    display: inline-flex;
+    padding: .6rem 1.5rem;
+    background-color: var(--secundary-background-color);
+
+}
+
+.article{
+    position: relative;
+    min-height: var(--item-min-height-md);
+
+}
+
+.article-image{
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform .25s;
+
+}
+
+
+.article-category{
+
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    padding: 1rem;
+    font-size: 1rem;
+    background-color: var(--primary-background-color);
+    color: var(--light-color);
+    text-transform: uppercase;
+    z-index: 10;
+
+}
+
+.article-data-container{
+
+    position:absolute;
+    bottom: 0;
+    left: 0;
+    padding: 2rem 1.5rem;
+    background-color: var(--transparent-dark-color);
+    z-index: 10;
+    width: 100%;
+    transition: background-color .5s;
+}
+
+
+.article:hover .article-data-container{
+
+    background-color: var(--hover-dark-color);
+    color: var(--hover-light-color);
+}
+
+.article:hover .article-data-spacer{
+
+    background-color: var(--hover-light-color);
+    
+}
+
+
+.article-data{
+
+    display: flex;
+    align-items: center;
+    gap: var(--gap);
+    font-size: var(--font-size-xsm);
+    margin-bottom: 1rem;
+
+}
+
+.article-data-spacer{
+
+    width: .5rem;
+    height: .5rem;
+    background-color: var(--light-color-alt);
+    transform: rotate(45deg);
+}
+
+.title{
+
+    color: var(--light-color);
+
+}
+
+.article-title{
+
+    font-size: var(--font-size-md);
+
+}
+
+
+1:20
+
+*******
+
+AHORA LE AGREGO LA ESTRUCTURA DE LA BARRA LATERAL
+
+
+1.23
+
+
+<!-- Sidebar -->
+
+
+
+ <div class="sidebar d-grid">
+                
+                <h3 class="title featured-content-title">Trending News</h3>
+
+                <a href="#" class="trending-news-box">
+                    
+                    <div class="trending-news-image-box">
+                        <span class="trending-number place-items-center">01</span>
+                        <img src="./assets/images/trending/trending-1.jpg" alt="" class="article-image">
+                    </div>
+
+                    <div class="trending-news-data">
+                        <div class="article-data">
+
+                            <span>Dec 3th 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>8 min red</span>
+
+                        </div>
+
+                        <h3 class="title article-title">Sample article title</h3>
+                    </div>
+
+                </a>
+
+                <a href="#" class="trending-news-box">
+                    
+                    <div class="trending-news-image-box">
+                        <span class="trending-number place-items-center">01</span>
+                        <img src="./assets/images/trending/trending-2.jpg" alt="" class="article-image">
+                    </div>
+
+                    <div class="trending-news-data">
+                        <div class="article-data">
+
+                            <span>Dec 3th 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>8 min red</span>
+
+                        </div>
+
+                        <h3 class="title article-title">Sample article title</h3>
+                    </div>
+
+                </a>
+
+                <a href="#" class="trending-news-box">
+                    
+                    <div class="trending-news-image-box">
+                        <span class="trending-number place-items-center">02</span>
+                        <img src="./assets/images/trending/trending-3.jpg" alt="" class="article-image">
+                    </div>
+
+                    <div class="trending-news-data">
+                        <div class="article-data">
+
+                            <span>Dec 3th 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>8 min red</span>
+
+                        </div>
+
+                        <h3 class="title article-title">Sample article title</h3>
+                    </div>
+
+                </a>
+
+                <a href="#" class="trending-news-box">
+                    
+                    <div class="trending-news-image-box">
+                        <span class="trending-number place-items-center">03</span>
+                        <img src="./assets/images/trending/trending-4.jpg" alt="" class="article-image">
+                    </div>
+
+                    <div class="trending-news-data">
+                        <div class="article-data">
+
+                            <span>Dec 3th 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>8 min red</span>
+
+                        </div>
+
+                        <h3 class="title article-title">Sample article title</h3>
+                    </div>
+
+                </a>
+
+                <a href="#" class="trending-news-box">
+                    
+                    <div class="trending-news-image-box">
+                        <span class="trending-number place-items-center">04</span>
+                        <img src="./assets/images/trending/trending-5.jpg" alt="" class="article-image">
+                    </div>
+
+                    <div class="trending-news-data">
+                        <div class="article-data">
+
+                            <span>Dec 3th 2022</span>
+                            <span class="article-data-spacer"></span>
+                            <span>8 min red</span>
+
+                        </div>
+
+                        <h3 class="title article-title">Sample article title</h3>
+                    </div>
+
+                </a>
+
+            </div>
+
+
+
+**** agrego el CSS a la barra lateral:
+
+
+
+
+/*Style Slidebar*/
+
+.slidebar{
+
+    background-color: var(--secundary-background-color);
+    padding: 2.5rem;
+}
+
+.trending-news-box{
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap);
+    padding-block: 2rem;
+    border: 1px solid --transparent-light-color;
+    
+}
+
+.trending-news-box:last-of-type{
+
+    border-bottom: none;
+
+}
+
+.trending-news-image-box{
+
+    position: relative;
+    width: 100%;
+    height: var(--item-min-height-sm);
+
+}
+
+.featured-content-title{
+
+    font-size: var(--font-size-md);
+    text-align: center;
+    padding: 1rem;
+
+}
+
+.trending-number{
+
+    position: absolute;
+    top: -1rem;
+    left: -1rem;
+    z-index: 15;
+    width: 3rem;
+    height: 3rem;
+    background-color: var(--secundary-background-color);
+    color: var(--light-color);
+    border-radius: 50%;
+}
+
+.trending-news-data .article-title{
+
+    font-size: var(--font-size-sm);
+
+}
+
+.trending-news-box:hover .article-title{
+
+    color: var(--light-color-alt);
+}
+
+
+IMPORTANTE
+**** agrego la estructura html de la lectura rapida:
+
+
+1.32
+1.34
+
+ <!--Quick read-->
+    <section class="quick-read section">
+
+        <div class="container">
+
+            <h2 class="title section-title" data-name="Quick read">Quick Read</h2>
+
+            <div class="swiper">
+                <div class="swiper-wrapper">
+
+                    <a href="#" class="article swiper-slide">
+                        <img src="./assets/images/quick_read/quick-read1.jpg" alt="" class="article-image">
+
+                        <div class="article-data-container">
+
+                            <div class="article-data">
+
+                                <span>Dec 3th 2022</span>
+                                <span class="article-data-spacer"></span>
+                                <span>8 min red</span>
+
+                            </div>
+
+                            <h3 class="title article-title">Is VR the future?</h3>
+
+                        </div>
+
+                    </a>
+
+                    <a href="#" class="article swiper-slide">
+                        <img src="./assets/images/quick_read/quick-read2.jpg" alt="" class="article-image">
+
+                        <div class="article-data-container">
+
+                            <div class="article-data">
+
+                                <span>Dec 3th 2022</span>
+                                <span class="article-data-spacer"></span>
+                                <span>8 min red</span>
+
+                            </div>
+
+                            <h3 class="title article-title">Is VR the future?</h3>
+
+                        </div>
+
+                    </a>
+                    <a href="#" class="article swiper-slide">
+                        <img src="./assets/images/quick_read/quick-read3.jpg" alt="" class="article-image">
+
+                        <div class="article-data-container">
+
+                            <div class="article-data">
+
+                                <span>Dec 3th 2022</span>
+                                <span class="article-data-spacer"></span>
+                                <span>8 min red</span>
+
+                            </div>
+
+                            <h3 class="title article-title">Is VR the future?</h3>
+
+                        </div>
+
+                    </a>
+                    <a href="#" class="article swiper-slide">
+                        <img src="./assets/images/quick_read/quick-read4.jpg" alt="" class="article-image">
+
+                        <div class="article-data-container">
+
+                            <div class="article-data">
+
+                                <span>Dec 3th 2022</span>
+                                <span class="article-data-spacer"></span>
+                                <span>8 min red</span>
+
+                            </div>
+
+                            <h3 class="title article-title">Is VR the future?</h3>
+
+                        </div>
+
+                    </a>
+                    <a href="#" class="article swiper-slide">
+                        <img src="./assets/images/quick_read/quick-read5.jpg" alt="" class="article-image">
+
+                        <div class="article-data-container">
+
+                            <div class="article-data">
+
+                                <span>Dec 3th 2022</span>
+                                <span class="article-data-spacer"></span>
+                                <span>8 min red</span>
+
+                            </div>
+
+                            <h3 class="title article-title">Is VR the future?</h3>
+
+                        </div>
+
+                    </a>
+                </div>
+
+                <div class="swiper-button-prev swiper-controls"></div>
+                <div class="swiper-button-next swiper-controls"></div>
+
+                <div class="swiper-paginatio"></div>
+
+            </div>
+
+        </div>
+
+    </section>
+   
+
+***************************** AGREGO EL STYLO CSS DEL QUICKREAD
+
+
+
+/* Quick Read*/
+
+.section-title{
+
+    position: relative;
+    font-size: var(--font-size-md);
+    margin-bottom: 6rem;
+
+}
+
+
+.section::before{
+
+    contant: attr(data-name);
+    font-size: var(--font-size-lg);
+    text-transform: uppercase;
+    opacity: .1;
+    position: absolute;
+    top: 1.5rem;
+    left: 2rem;
+}
+
+.swiper-controls{
+
+        width: 3.5rem;
+        height: 3.5rem;
+        background-color: var(--secundary-background-color);
+     
+}
+
+.swiper-controls::after{
+
+        font-size: 1.6rem;
+        color: var(--light-color);
+        
+}
+
+
+** AGREGO LA FUNCIONALIDAD EN JS
+
+
+1:40
+
+
+1:42
+
+
+
+// the Swiper
+
+
+const swiper = new Swiper('.swiper',{
+    slidesPerView: 1,
+    spaceBetween: 20,
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev'
+    },
+    pagination: {
+        el: '.swiper-pagination'
+    },
+    breakpoints: {
+        700:{
+            slidesPerView: 2
+        },
+        1200: {
+            slidesPerView: 3
+        }
+    }
+
+})
+
+
+*** ahora le agrego el estilo a los puntos de la swiper paginacion.
+
+.swiper-pagination{
+
+    bottom: .5rem !important;
+    
+}
+
+
+//estos son los botones blancos que aparecen cada vez que muevo un slide
+
+.swiper-pagination-bullet{
+
+    background-color: var(--light-color);
+}
+
+
+
+****** ahora creo el html la seccion del older posts:
+
+
+    <!--Older posts-->
+
+    <section class="older-post section">
+
+        <div class="container">
+
+            <h2 class="title section-title" data-name="older posts">Older posts</h2>
+            <div class="older-posts-grid-wrapper d-grid">
+                
+                <a href="#" class="article d-grid">
+                    <div class="older-post-article-image-wrapper">
+                        <img src="./assets/images/older_post/oldPost1.jpg" alt="" class="article-image">
+                    </div>
+                </a>
+
+            </div>
+        </div>
+
+    </section>
+
+
+
+1.46
+
+le agrego el container
+
+
+ <!--Older posts-->
+
+    <section class="older-post section">
+
+        <div class="container">
+
+            <h2 class="title section-title" data-name="older posts">Older posts</h2>
+            <div class="older-posts-grid-wrapper d-grid">
+
+                <a href="#" class="article d-grid">
+                    <div class="older-post-article-image-wrapper">
+                        <img src="./assets/images/older_post/oldPost1.jpg" alt="" class="article-image">
+                    </div>
+
+                    <div class="article-data-container">
+                        <div class="article-data">
+
+                            <span>Dec 5th 2021</span>
+                            <span class="article-data-spacer"></span>
+                            <span>8 min red</span>
+
+                        </div>
+
+                        <h3 class="title article-title">Is VR the future</h3>
+                        <p class="article-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. gendi excepturi voluptatem est consectetur, ut sint. Consectetur eius nobis quam?</p>
+                    </div>
+                </a>
+
+                <a href="#" class="article d-grid">
+                    <div class="older-post-article-image-wrapper">
+                        <img src="./assets/images/older_post/oldPost2.jpg" alt="" class="article-image">
+                    </div>
+
+                    <div class="article-data-container">
+                        <div class="article-data">
+
+                            <span>Dec 5th 2021</span>
+                            <span class="article-data-spacer"></span>
+                            <span>8 min red</span>
+
+                        </div>
+
+                        <h3 class="title article-title">Is VR the future</h3>
+                        <p class="article-description">Lorem ipsum dolor sit, amet consectetur adipisicing elit. gendi excepturi voluptatem est consectetur, ut sint. Consectetur eius nobis quam?</p>
+                    </div>
+                </a>
+
+
+            </div>
+		        <div class="see-more-container">
+                <a href="#" class="btn see-more-btn place-items-center">
+                    see more <i class="ri-arrow-right-s-line"></i>
+                </a>
+            </div>
+        </div>
+
+    </section>
+
+
+***** le agrego el estylo css al older post
+
+
+/*older posts*/
+
+.older-posts-grid-wrapper{
+    gap:var(--gap);
+}
+
+.older-posts-article-image-wrapper,
+.older-posts .article{
+
+    min-height:var(--item-min-height-sm);
+}
+
+.older-posts .article{
+    background-color: var(--secundary-background-color);
+}
+
+
+.older-posts-article-image-wrapper{
+    position: relative;
+}
+
+.older-posts-grid-wrapper .article-data-container{
+    position: static;
+    background-color: transparent;
+}
+
+.older-posts-grid-wrapper .article-title{
+    margin-bottom: var(--margin-sm);
+}
+
+.see-more-container{
+
+    margin-top: var(--margin-md);
+
+}
+
+.see-more-btn{
+    text-transform: uppercase;
+}
+
+.see-more-btn i{
+    transition: transform .25s;
+}
+
+.see-more-btn:hover i {
+    transform: translateX(.5rem);
+}
+
+
+
+
+1.51
+
+********************************* AHORA AGREGO LA ESTRUCTURA DEL POPULAR TAGS
+
+<!-Popular tags->
+
+1.53
+
+
+//la estructura:
+
+    <!--Popular tags-->
+
+    <section class="popular-tags section">
+        <div class="container">
+            <h2 class="title section-title" data-name="Popular tags"> Popular tags </h2>
+            <div class="popular-tags-container d-grid">
+                <a href="#" class="article">
+                    <span class="tag-name">#Travel</span>
+                    <img src="./assets/images/tags/travel.jpg" alt="" class="article-image">
+                </a>
+
+                <a href="#" class="article">
+                    <span class="tag-name">#Food</span>
+                    <img src="./assets/images/tags/food.jpg" alt="" class="article-image">
+                </a>
+
+                <a href="#" class="article">
+                    <span class="tag-name">#Tecnology</span>
+                    <img src="./assets/images/tags/tech.jpg" alt="" class="article-image">
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+// el estilo  <!--Popular tags-->
+
+
+
+
+.popular-tags-container{
+    gap: var(--gap);
+    
+}
+
+
+// cuando hago esto le doy el espacio entre unquer tag a los titulos
+
+
+
+
+
+/*Popular Tags */
+
+.popular-tags-container{
+    gap: var(--gap);
+
+}
+
+.popular-tags-container .article{
+
+    min-height: var(--item-min-height-sm);
+    overflow: hidden;
+}
+
+.tag-name{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transition: translate(50%,50%);
+    background-color: var(--transparent-dark-color);
+    padding: 1rem 2rem;
+    z-index: 18;
+}
+
+.popular-tags-container .article:hover .tag-name{
+    color: var(--light-color);
+}
+
+.popular-tags-container .article:hover .article-image{
+    transform: scale(1.05);
+}
+
+
+
+
+
+*********************************
+
+ahora hacemos la estructura del NewsLetter
+
+ <!--NewsLetter-->
+
+    <section class="newsletter section">
+        
+        <div class="container">
+
+            <h2 class="title section-title" data-name="Newsletter">Newsletter</h2>
+
+            <div class="form-container-inner">
+
+                <h6 class="title newsletter-title">Subcribe to NewFlash</h6>
+                <p class="newsletter-description">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repudiandae minima sit, 
+                    magni ad obcaecati odit vel dolorem soluta eius. Delectus neque quam minus commodi iusto.</p>
+                    <form action="form">
+                        <input type="text" class="form-input" placeholder="Enter your Email address">
+                        <button class="btn form-btn" type="submit">
+                            <i class="ri-mail-send-line"></i>
+                        </button>
+                    </form>
+
+            </div>
+
+            
+
+        </div>
+
+    </section>
+
+
+//ahora le agrego el estilo al newsletter:
+
+/*Newsletter*/
+
+.newsletter{
+  padding-bottom: 6rem;  
+}
+
+.newsletter-title{
+    font-size:var(--font-size-lg);
+}
+
+.newsletter-description{
+    margin-botton: 3rem;
+}
+
+
+******ahora agrego la estructura html del footer:
+
+2:03
+
+2.06
+
+
+
+  <!--Footer-->
+    <footer class="footer section">
+        <div class="footer-container container d-grid">
+
+          <div class="company-data">
+                <a href="./index.html">
+                    <h2 class="logo">NewFlash</h2>
+                </a>
+                <p class="company-description">
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+                     perferendis eum!
+                </p>
+                <ul class="list social-media">
+                    <li class="list-item">
+                        <a href="#" class="list-link">
+                            <i class="ri-instagram-line"></i>
+                        </a>
+                        <a href="#" class="list-link">
+                            <i class="ri-facebook-line"></i>
+                        </a>
+                        <a href="#" class="list-link">
+                            <i class="ri-twitter-line"></i>
+                        </a>
+                        <a href="#" class="list-link">
+                            <i class="ri-pinterest-line"></i>
+                        </a>
+                    </li>
+                </ul>
+
+                <span class="copyright-notice">&copy; 2023 Newsflash. All rights reserved.</span>
+
+          </div>
+          <div>
+           <h6 class="title footer-title">Categories</h6>
+
+           <ul class="list footer-list">
+                <li class="list-item">
+                    <a href="#" class="list-link">Sample item</a>
+                </li>
+                <li class="list-item">
+                    <a href="#" class="list-link">Sample item</a>
+                </li>
+                <li class="list-item">
+                    <a href="#" class="list-link">Sample item</a>
+                </li>
+           </ul>
+          </div>
+
+          <div>
+            <h6 class="title footer-title">Company</h6>
+ 
+            <ul class="list footer-list">
+                 <li class="list-item">
+                     <a href="#" class="list-link">Sample item</a>
+                 </li>
+                 <li class="list-item">
+                     <a href="#" class="list-link">Sample item</a>
+                 </li>
+                 <li class="list-item">
+                     <a href="#" class="list-link">Sample item</a>
+                 </li>
+            </ul>
+           </div>
+
+           <div>
+            <h6 class="title footer-title">Useful links</h6>
+ 
+            <ul class="list footer-list">
+                 <li class="list-item">
+                     <a href="#" class="list-link">Sample item</a>
+                 </li>
+                 <li class="list-item">
+                     <a href="#" class="list-link">Sample item</a>
+                 </li>
+                 <li class="list-item">
+                     <a href="#" class="list-link">Sample item</a>
+                 </li>
+            </ul>
+           </div>
+ 
+
+        </div>
+
+    </footer>
+
+
+*********** le agrego el estilo:
+
+
+2.15
+
+
+/*Footer*/
+
+.footer{
+
+    background-color: var(--secundary-background-color);
+
+}
+
+
+.footer-container{
+    gap: var(--gap);
+}
+
+.campany-data{
+    display: flex;
+    flex-direction: column;
+    order: 1;
+}
+
+.company-description{
+    margin-block: var(--margin-sm);
+    max-width: 75%;
+}
+
+.social-media{
+    margin-bottom: var(--magin-md) ;
+}
+
+.copyright-notice{
+    opacity: .8;
+}
+
+.footer-list{
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+
+.footer-title{
+    font-size: var(--font-size-md);
+    text-transform: uppercase;
+    margin-bottom: var(--margin-sm);
+
+}
+
+/*Scrollbar styles*/
+
+::-webkit-scrollbar{
+    width: 1rem;
+}
+
+::-webkit-scrollbar-track{
+
+    background-color: #f1f1f1;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background-color: #3f4254;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover{
+
+    background-color: #2e303b;
+
+}
+
+
+
+2.15
+
+2.19
+
+
+para bloques uso la etiqueta blockquote
+
+
+<span><i class="ri-double-quotes-l"></i></s   las comillas  izquierda es l 
+
+2.21
+
+
+<span><i class="ri-double-quotes-r"></i></span>   r la comillas a la derecha
+
+
+
+********************
+
+agrego la estructura blog post
+
+    <!--Blog post-->
+
+    <section class="blog post section-header-offset">
+
+        <div class="blog-post-container container">
+            <div class="blog-post-data">
+                <h3 class="title blog-post-title">Is VR the future</h3>
+                <div class="article-data">
+                    <span> april 6th 2023</span>
+                    <span class="article-data-spacer"></span>
+                    <span>4 min read</span>
+                </div>
+                <img src="./assets/images/featured/featured-1.jpg" alt="">
+            </div>
+
+            <div class="container">
+                <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia deserunt eum labore nisi eos vitae provident! atque perferendis earum.</p>
+                <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia deserunt eum labore nisi eos vitae provident! atque perferendis earum.</p>
+
+                <blockquote class="quote">
+                    <p>
+                        <span><i class="ri-double-quotes-l"></i></span>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                         Quia deserunt eum <span><i class="ri-double-quotes-r"></i></span>
+
+                    </p>
+                </blockquote>
+
+                <p >Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia deserunt eum labore nisi eos vitae provident! atque perferendis earum.</p>
+
+                <div class="author d-grid">
+                    
+                    <div class="author-image-box">
+                        <img src="./assets/images/author.jpg" alt="" class="article-image">
+                    </div>
+
+                    <div class="author-about">
+                        <h3 class="author-name">MR. Author</h3>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.  minus, alias consequuntur illo.</p>
+                        <ul class="list social-media">
+                            <li class="list-item">
+                                <a href="#" class="list-link">
+                                    <i class="ri-instagram-line"></i>
+                                </a>
+                                <a href="#" class="list-link">
+                                    <i class="ri-facebook-line"></i>
+                                </a>
+                                <a href="#" class="list-link">
+                                    <i class="ri-twitter-line"></i>
+                                </a>
+                         
+                            </li>
+                        </ul>
+                                      
+                    
+                    </div>
+                </div>
+
+            </div>
+
+
+
+        </div>
+
+    </section>
+
+
+
+
+********************************************************
+
+2.26
+
+le agrego el estilo a blogpost
+
+
+2.29
+
+2.33
+
+
+
+con esto lo pongo a los lados el menu 
+
+
+/*Media queries*/
+
+
+/*Media queries*/
+
+@media screen and (min-width: 700px) {
+  .trending-news-box {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .trending-news-image-box {
+    width: 50%;
+  }
+  .trending-news-data {
+    margin: auto;
+    text-align: center;
+  }
+
+  .newsletter-description {
+    max-width: 40rem;
+  }
+
+  .popular-tags-container,
+  .footer-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-container-inner {
+    align-items: center;
+  }
+
+  .company-data {
+    order: 0;
+  }
+
+  .author {
+    grid-template-columns: 25rem 1fr;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .featured-content {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 5rem repeat(4, 1fr);
+  }
+
+  .headline-banner {
+    grid-column: 1/-1;
+    font-size: var(--font-size-sm);
+  }
+
+  .featured-article {
+    grid-column: 3/-1;
+    grid-row: 2/4;
+  }
+
+  .featured-article-1 {
+    grid-column: 1/3;
+  }
+
+  .featured-article-2 {
+    grid-column: 1/3;
+  }
+
+  .featured-article-3 {
+    grid-column: 1/-1;
+    grid-row: 4/6;
+  }
+
+  .older-posts .article {
+    grid-template-columns: 25rem 1fr;
+  }
+
+  .older-posts-article-image-wrapper {
+    height: auto;
+  }
+
+  .blog-post-data img {
+    height: var(--item-min-height-md);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .menu {
+    position: initial;
+    width: initial;
+    padding: initial;
+    background-color: transparent;
+    opacity: initial;
+    transform: initial;
+  }
+
+  .menu > .list {
+    flex-direction: row;
+  }
+
+  .screen-lg-hidden {
+    display: none;
+  }
+
+  .screen-sm-hidden {
+    display: block;
+  }
+
+  .sign-up-btn {
+    padding: 0.4rem;
+  }
+  
+  .btn.fancy-border:hover::before {
+    animation: animate_border 0.75s linear infinite;
+  }
+
+  @keyframes animate_border {
+    to {
+      transform: translateX(-50%);
+    }
+  }
+
+  .featured-articles-container {
+    grid-template-columns: 1fr 40rem;
+  }
+
+  .trending-news-image-box {
+    width: 10rem;
+    height: 10rem;
+  }
+
+  .popular-tags-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .footer-container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  .company-data {
+    grid-column: span 2;
+  }
+
+  .company-description {
+    max-width: 85%;
+  }
+
+  .copyright-notice {
+    margin-top: auto;
+  }
+
+  .blog-post-data img {
+    height: 40rem;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+
+  .older-posts-article-image-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media screen and (min-width: 1500px) {
+  .featured-article {
+    grid-column: 3/-1;
+  }
+
+  .featured-article-1 {
+    grid-column: 1/3;
+    grid-row: 2/-1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
